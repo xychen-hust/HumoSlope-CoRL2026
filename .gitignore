@@ -1,0 +1,9 @@
+# Local source assets used to prepare the web-ready media.
+/figures/
+/*.pptx
+
+# Local editor and OS files.
+.DS_Store
+Thumbs.db
+.vscode/
+

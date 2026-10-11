@@ -3,518 +3,370 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+  <meta name="description" content="HumoSlope: physics-guided biomechanical gait adaptation for proprioception-only humanoid locomotion on extreme sloped terrains.">
+  <meta name="keywords" content="humanoid locomotion, reinforcement learning, slope locomotion, Unitree G1, proprioception, robotics">
+  <meta name="theme-color" content="#10251f">
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+  <meta property="og:title" content="HumoSlope | CoRL 2026">
+  <meta property="og:description" content="Physics-guided biomechanical gait adaptation for humanoid locomotion on extreme sloped terrains.">
+  <meta name="citation_title" content="Physics-Guided Biomechanical Gait Adaptation for Humanoid Locomotion on Extreme Sloped Terrains">
+  <meta name="citation_author" content="Xuanyu Chen">
+  <meta name="citation_author" content="Mohan Liu">
+  <meta name="citation_author" content="Dengchen Mei">
+  <meta name="citation_author" content="Zhihao Gu">
+  <meta name="citation_author" content="Haitian Zhang">
+  <meta name="citation_author" content="Kaimin Mao">
+  <meta name="citation_author" content="Haiyue Zhu">
+  <meta name="citation_author" content="Shijun Yan">
+  <meta name="citation_author" content="Lin Wang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Conference on Robot Learning (CoRL)">
+  <meta name="citation_arxiv_id" content="2607.07830">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2607.07830">
+  <meta name="citation_abstract" content="Model-free reinforcement learning has enabled impressive humanoid locomotion; however, control on steep slopes remains largely unexplored. Unlike flat or discrete terrains, sloped terrains impose a persistent gravitational bias that demands simultaneous stability and posture control. Consequently, under generic reward formulations, policies can converge to slow, conservative low-center-of-mass (CoM) crouched gaits. In this work, we propose a novel two-stage physics-guided framework, dubbed HumoSlope, dedicated to robust humanoid locomotion on diverse sloped terrains. Specifically, Stage I establishes a terrain-consistent balance prior by introducing a slope-adaptive Zero Moment Point (ZMP) regularizer evaluated directly on the local inclined support plane rather than a world-horizontal reference. To prevent the resulting policy from defaulting to a crouched posture, Stage II introduces the Biomechanical Slope Gait Adapter (BSGA). Utilizing extracted macroscopic terrain descriptors as privileged, training-only signals, BSGA dynamically gates soft reward priors to modulate CoM height and lower-limb coordination based on the estimated slope geometry—encouraging hip-dominant uphill propulsion and knee-oriented downhill braking. Crucially, the deployed actor remains entirely proprioceptive, requiring no online exteroceptive sensing. Extensive Sim-to-Real experiments demonstrate that our framework effectively mitigates posture degeneration and enables blind, continuous traversal of outdoor grass slopes up to 62.7% (32.1°), validating a physics-guided approach to challenging slope terrain adaptation.">
+  <title>HumoSlope | CoRL 2026</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="HumoSlope home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span>HumoSlope</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#citation">Citation</a>
       </div>
     </div>
-  </div>
+  </nav>
 
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+    <header class="hero-section" id="top">
+      <div class="terrain-lines" aria-hidden="true"></div>
+      <div class="page-shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> CoRL 2026</div>
+          <p class="project-name">HumoSlope</p>
+          <h1>Physics-Guided Biomechanical Gait Adaptation for Humanoid Locomotion on Extreme Sloped Terrains</h1>
+          <p class="hero-lede">A two-stage reinforcement learning framework for robust, <strong>proprioception-only</strong> humanoid locomotion across extreme and complex slopes.</p>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+          <div class="publication-authors" aria-label="Authors and affiliations">
+            <p class="author-list">
+              <span>Xuanyu Chen<sup>1</sup></span>
+              <span>Mohan Liu<sup>1</sup></span>
+              <span>Dengchen Mei<sup>1</sup></span>
+              <span>Zhihao Gu<sup>1</sup></span>
+              <span>Haitian Zhang<sup>1</sup></span>
+              <span>Kaimin Mao<sup>1</sup></span>
+              <span>Haiyue Zhu<sup>2</sup></span>
+              <span>Shijun Yan<sup>3</sup></span>
+              <span>Lin Wang<sup>1,†</sup></span>
+            </p>
+            <div class="affiliations">
+              <p><sup>1</sup> EmPACT Lab, School of EEE, Nanyang Technological University, Singapore</p>
+              <p><sup>2</sup> Singapore Institute of Manufacturing Technology (SIMTech), Agency for Science, Technology and Research (A*STAR), Singapore</p>
+              <p><sup>3</sup> Advanced Remanufacturing &amp; Technology Centre (ARTC), Agency for Science, Technology and Research (A*STAR), Singapore</p>
             </div>
+            <p class="author-note"><sup>†</sup> Corresponding author</p>
+          </div>
+
+          <div class="resource-row" aria-label="Project resources">
+            <a class="resource-button" href="https://arxiv.org/pdf/2607.07830" target="_blank" rel="noopener noreferrer">
+              <svg class="resource-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.75 2.75h7l4.5 4.5v14h-11.5a2 2 0 0 1-2-2V4.75a2 2 0 0 1 2-2Z"/><path d="M13.75 2.75v5h4.5M8 13h7.5M8 16.5h6"/></svg>
+              <span>Paper</span><small>PDF</small>
+            </a>
+            <a class="resource-button" href="https://arxiv.org/abs/2607.07830" target="_blank" rel="noopener noreferrer">
+              <span class="resource-icon resource-icon--arxiv" aria-hidden="true">aX</span>
+              <span>arXiv</span><small>2607.07830</small>
+            </a>
+            <a class="resource-button" href="https://github.com/xychen-hust" target="_blank" rel="noopener noreferrer" aria-label="Visit Xuanyu Chen's GitHub profile; HumoSlope code coming soon">
+              <svg class="resource-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5M14 4l-4 16"/></svg>
+              <span>Code</span><small>soon</small>
+            </a>
           </div>
         </div>
+
+        <div class="hero-side">
+          <div class="hero-logos" aria-label="Conference and laboratory">
+            <a href="https://www.corl.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit the CoRL 2026 official website">
+              <img class="hero-logo hero-logo--corl" src="static/images/corl_2026_logo.png" alt="CoRL 2026">
+            </a>
+            <a href="https://empactlab.github.io/EmPACT-Lab/" target="_blank" rel="noopener noreferrer" aria-label="Visit the EmPACT Lab official website">
+              <img class="hero-logo hero-logo--empact" src="static/images/empact_logo.svg" alt="EmPACT Lab at Nanyang Technological University">
+            </a>
+          </div>
+          <aside class="hero-stat-card" aria-label="Headline result">
+            <div class="slope-graphic" aria-hidden="true">
+              <div class="slope-ground"></div>
+              <div class="robot-mark"><span></span><i></i></div>
+              <div class="angle-line">32.1°</div>
+            </div>
+            <div class="stat-content">
+              <span class="stat-kicker">Real-world outdoor grass slope</span>
+              <strong>32.1°</strong>
+              <p>Continuous locomotion with a Unitree G1 humanoid.</p>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </header>
 
+    <section class="demo-section" id="overview">
+      <div class="page-shell">
+        <div class="section-heading heading-row">
+          <div>
+            <span class="section-index">01 / Main demonstration</span>
+            <h2>Extreme slope locomotion, beyond the lab.</h2>
+          </div>
+        </div>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+        <div class="project-video-frame">
+          <video controls preload="metadata" poster="static/images/humoslope_overview_poster_corl.jpg" playsinline>
+            <source src="static/videos/humoslope_overview.mp4" type="video/mp4">
+            Your browser does not support HTML5 video. You can <a href="static/videos/humoslope_overview.mp4">download the project video</a> instead.
+          </video>
+        </div>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+        <div class="video-caption">
+          <span>Project video · 03:00</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block section-muted" id="abstract">
+      <div class="page-shell narrow-shell abstract-shell">
+        <div class="section-heading centered-heading">
+          <span class="section-index">Paper</span>
+          <h2>Abstract</h2>
+        </div>
+        <div class="abstract-copy">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Model-free reinforcement learning has enabled impressive humanoid locomotion; however, control on steep slopes remains largely unexplored. Unlike flat or discrete terrains, sloped terrains impose a persistent gravitational bias that demands simultaneous <strong>stability</strong> and <strong>posture control</strong>. Consequently, under generic reward formulations, policies can converge to slow, conservative low-center-of-mass (CoM) crouched gaits. In this work, we propose a novel two-stage physics-guided framework, dubbed <strong>HumoSlope</strong>, dedicated to robust humanoid locomotion on diverse sloped terrains. Specifically, <strong>Stage I</strong> establishes a terrain-consistent balance prior by introducing a slope-adaptive Zero Moment Point (ZMP) regularizer evaluated directly on the local inclined support plane rather than a world-horizontal reference. To prevent the resulting policy from defaulting to a crouched posture, <strong>Stage II</strong> introduces the Biomechanical Slope Gait Adapter (<strong>BSGA</strong>). Utilizing extracted macroscopic terrain descriptors as privileged, training-only signals, BSGA dynamically gates soft reward priors to modulate CoM height and lower-limb coordination based on the estimated slope geometry&mdash;encouraging hip-dominant uphill propulsion and knee-oriented downhill braking. Crucially, the deployed actor remains entirely proprioceptive, requiring no online exteroceptive sensing. Extensive Sim-to-Real experiments demonstrate that our framework effectively mitigates posture degeneration and enables blind, continuous traversal of outdoor grass slopes up to <strong>62.7% (32.1&deg;)</strong>, validating a physics-guided approach to challenging slope terrain adaptation.
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <section class="section-block" id="method">
+      <div class="page-shell">
+        <div class="section-heading heading-row">
+          <div>
+            <span class="section-index">02 / Method</span>
+            <h2>Guided in training, blind at deployment.</h2>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
 
+        <figure class="method-figure">
+          <a href="figures/archi_final.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution HumoSlope architecture figure as a PDF">
+            <img src="static/images/humoslope_architecture.png" alt="HumoSlope architecture: two-stage slope-adaptive ZMP regularization and biomechanical slope gait adaptation with training-only terrain descriptors and proprioceptive deployment.">
+          </a>
+          <figcaption>Overview of the HumoSlope framework. Select the figure to open the full-resolution PDF.</figcaption>
+        </figure>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+        <div class="method-flow" aria-label="HumoSlope two-stage method">
+          <article class="method-card">
+            <span class="method-number">I</span>
+            <div>
+              <p class="card-kicker">Stage I</p>
+              <h3>Slope-Adaptive ZMP Regularization</h3>
+              <p>A terrain-aligned ZMP reward learns a dynamic balance prior that adapts to the local slope.</p>
+            </div>
+          </article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article class="method-card">
+            <span class="method-number">II</span>
+            <div>
+              <p class="card-kicker">Stage II</p>
+              <h3>Biomechanical Slope Gait Adapter</h3>
+              <p>Training-time PCA terrain descriptors guide CoM height, uphill hip propulsion, downhill knee braking, and swing-leg motion through soft rewards.</p>
+            </div>
+          </article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article class="method-card method-card--accent">
+            <span class="method-number">✓</span>
+            <div>
+              <p class="card-kicker">Deployment</p>
+              <h3>Proprioception-only Actor</h3>
+              <p>The terrain descriptor is removed. The final policy acts from onboard proprioceptive observations alone.</p>
+            </div>
+          </article>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+      </div>
+    </section>
+
+    <section class="section-block experiments-section" id="experiments">
+      <div class="page-shell">
+        <div class="section-heading heading-row">
+          <div>
+            <span class="section-index">03 / Experiments</span>
+            <h2>Experiments</h2>
+          </div>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+
+        <section class="experiment-subsection" id="simulation-results">
+          <h3>Simulation Results</h3>
+          <p class="visual-label">Compound Slope Tracks</p>
+        <figure class="experiment-figure">
+          <a href="figures/experiment_final.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution HumoSlope experiment figure as a PDF">
+            <img src="static/images/humoslope_experiments.png" alt="Qualitative experiment comparison showing HumoSlope walking uphill, on flat ground, and downhill; a crouched URL baseline; and the wavy, banked, rough, striped, and composite evaluation terrains.">
+          </a>
+          <figcaption>Compound slope tracks and representative policy behaviors.</figcaption>
+        </figure>
+
+        <div class="paper-table-shell">
+          <div class="paper-table-scroll" tabindex="0" aria-label="Scrollable compound slope-track benchmark table">
+            <table class="paper-table paper-table--main">
+              <caption>Table 1 — Main Results</caption>
+              <thead>
+                <tr>
+                  <th rowspan="2" scope="col">Method</th>
+                  <th rowspan="2" scope="col">Input</th>
+                  <th colspan="3" scope="colgroup">0% (0°)</th>
+                  <th colspan="3" scope="colgroup">17.6% (10°)</th>
+                  <th colspan="3" scope="colgroup">36.4% (20°)</th>
+                  <th colspan="3" scope="colgroup">57.7% (30°)</th>
+                  <th rowspan="2" scope="col">Max Grade ↑</th>
+                </tr>
+                <tr>
+                  <th scope="col"><abbr title="Success Rate">SR</abbr> ↑</th><th scope="col"><abbr title="Maximum Distance">MXD</abbr> ↑</th><th scope="col">T<sub>trav</sub> ↓</th>
+                  <th scope="col"><abbr title="Success Rate">SR</abbr> ↑</th><th scope="col"><abbr title="Maximum Distance">MXD</abbr> ↑</th><th scope="col">T<sub>trav</sub> ↓</th>
+                  <th scope="col"><abbr title="Success Rate">SR</abbr> ↑</th><th scope="col"><abbr title="Maximum Distance">MXD</abbr> ↑</th><th scope="col">T<sub>trav</sub> ↓</th>
+                  <th scope="col"><abbr title="Success Rate">SR</abbr> ↑</th><th scope="col"><abbr title="Maximum Distance">MXD</abbr> ↑</th><th scope="col">T<sub>trav</sub> ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">URL</th><td>Prop.</td>
+                  <td>99.7</td><td>32.13</td><td>88.0</td>
+                  <td>97.7</td><td>31.66</td><td>92.7</td>
+                  <td>37.5</td><td>17.94</td><td>99.4</td>
+                  <td>0.0</td><td>2.18</td><td>—</td><td>47% (25°)</td>
+                </tr>
+                <tr>
+                  <th scope="row">FastTD3</th><td>Prop.</td>
+                  <td>100.0</td><td>31.50</td><td>76.1</td>
+                  <td>100.0</td><td>31.49</td><td>73.2</td>
+                  <td>77.3</td><td>28.32</td><td>87.5</td>
+                  <td>0.0</td><td>2.02</td><td>—</td><td>70% (35°)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gallant</th><td>LiDAR</td>
+                  <td>99.7</td><td>31.47</td><td>51.9</td>
+                  <td>90.7</td><td>30.29</td><td>53.5</td>
+                  <td>78.9</td><td>28.37</td><td>54.6</td>
+                  <td>0.0</td><td>6.11</td><td>—</td><td>60% (31°)</td>
+                </tr>
+                <tr class="ours-row">
+                  <th scope="row">Ours</th><td>Prop.</td>
+                  <td><strong>100.0</strong></td><td><strong>32.19</strong></td><td><strong>44.3</strong></td>
+                  <td><strong>100.0</strong></td><td><strong>32.19</strong></td><td><strong>47.0</strong></td>
+                  <td><strong>100.0</strong></td><td><strong>32.18</strong></td><td><strong>48.6</strong></td>
+                  <td><strong>77.1</strong></td><td><strong>27.54</strong></td><td><strong>62.8</strong></td><td><strong>73% (36°)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">SR (%), MXD (m), and T<sub>trav</sub> (s) are averaged over three checkpoints and three friction tiers.</p>
         </div>
+
+        <p class="experiment-summary">We evaluate HumoSlope on held-out 35 m compound slope tracks with diverse terrain variations. HumoSlope achieves <strong>100% success up to 20°</strong> and <strong>77.1% success at 30°</strong>, where all baselines fail to complete the track. A separate slope-limit evaluation demonstrates traversal at <strong>36°</strong>.</p>
+        </section>
+
+        <section class="experiment-subsection" id="biomechanical-analysis">
+          <h3>Biomechanical Analysis</h3>
+          <p class="subsection-deck">CoM Height · Hip-Pitch Torque · Knee Flexion</p>
+
+        <figure class="results-figure">
+          <a href="figures/curves.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution biomechanical diagnostics figure as a PDF">
+            <img src="static/images/humoslope_biomechanical_diagnostics.png" alt="Biomechanical diagnostics comparing HumoSlope and URL in center-of-mass height, hip-pitch torque along the track, and knee flexion along the track.">
+          </a>
+          <figcaption>CoM height, hip-pitch torque, and knee-flexion diagnostics.</figcaption>
+        </figure>
+
+        <p class="experiment-summary">HumoSlope maintains a more upright posture than the URL baseline, avoiding persistent low-CoM crouching. It exhibits increased hip-pitch torque during ascent and greater knee flexion during descent, demonstrating slope-conditioned gait adaptation.</p>
+        </section>
+
+        <section class="experiment-subsection" id="ablation-study">
+          <h3>Ablation Study</h3>
+        <div class="paper-table-shell">
+          <div class="paper-table-scroll" tabindex="0" aria-label="Scrollable ablation study table">
+            <table class="paper-table paper-table--ablation">
+              <caption>Table 2 — Ablation Results</caption>
+              <thead>
+                <tr>
+                  <th rowspan="2" scope="col">Variant</th>
+                  <th colspan="3" scope="colgroup">Task Performance</th>
+                  <th colspan="2" scope="colgroup">Efficiency / Stability</th>
+                  <th colspan="2" scope="colgroup">Posture / Load</th>
+                </tr>
+                <tr>
+                  <th scope="col"><abbr title="Success Rate">SR</abbr> ↑</th>
+                  <th scope="col"><abbr title="Maximum Distance">MXD</abbr> ↑</th>
+                  <th scope="col">T<sub>trav</sub> ↓</th>
+                  <th scope="col"><abbr title="Cost of Transport">CoT</abbr> ↓</th>
+                  <th scope="col">σ<sup>2</sup><sub>yaw</sub> ↓</th>
+                  <th scope="col">h̄<sub>com</sub></th>
+                  <th scope="col">τ<sup>pk</sup><sub>knee</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="ours-row"><th scope="row">Full</th><td>98.2</td><td>31.75</td><td>53.7</td><td>1.380</td><td>0.1008</td><td>0.669</td><td>117.9</td></tr>
+                <tr><th scope="row">Stage I only (no Stage II)</th><td>100.0</td><td>32.20</td><td>67.6</td><td>0.925</td><td>0.0148</td><td>0.535</td><td>82.9</td></tr>
+                <tr class="group-start"><th scope="row">w/o slope-adaptive ZMP</th><td>55.6</td><td>22.08</td><td>54.1</td><td>1.906</td><td>0.3048</td><td>0.720</td><td>115.5</td></tr>
+                <tr class="group-start"><th scope="row">w/o BSGA critic cue</th><td>93.2</td><td>30.56</td><td>74.1</td><td>1.676</td><td>0.2009</td><td>0.727</td><td>83.4</td></tr>
+                <tr><th scope="row">w/o BSGA reward priors</th><td>26.9</td><td>18.09</td><td>71.9</td><td>1.603</td><td>0.2031</td><td>0.722</td><td>108.9</td></tr>
+                <tr><th scope="row">w/o BSGA</th><td>0.0</td><td>9.59</td><td>—</td><td>1.621</td><td>0.3133</td><td>0.659</td><td>136.4</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="experiment-summary">Stage I establishes a strong stability prior, while Stage II improves traversal speed and posture adaptation. Removing slope-adaptive ZMP or BSGA components substantially degrades performance, confirming their complementary contributions.</p>
+        </section>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+    <section class="section-block" id="citation">
+      <div class="page-shell narrow-shell">
+        <div class="section-heading centered-heading">
+          <span class="section-index">04 / Citation</span>
+          <h2>BibTeX</h2>
+          <p>Use the arXiv citation below. The entry will be updated when the official CoRL record becomes available.</p>
+        </div>
+        <div class="citation-box">
+          <div class="citation-toolbar">
+            <span>arXiv preprint · 2607.07830</span>
+            <button class="copy-button" type="button" data-copy-target="bibtex-code">Copy BibTeX</button>
+          </div>
+          <pre id="bibtex-code" aria-label="HumoSlope arXiv BibTeX"><code>@article{chen2026physics,
+  title={Physics-Guided Biomechanical Gait Adaptation for Humanoid Locomotion on Extreme Sloped Terrains},
+  author={Chen, Xuanyu and Liu, Mohan and Mei, Dengchen and Gu, Zhihao and Zhang, Haitian and Mao, Kaimin and Zhu, Haiyue and Yan, Shijun and Wang, Lin},
+  journal={arXiv preprint arXiv:2607.07830},
+  year={2026},
+  doi={10.48550/arXiv.2607.07830},
+  url={https://arxiv.org/abs/2607.07830}
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-inner">
+      <div><strong>HumoSlope</strong><p>Humanoid locomotion on extreme sloped terrains.</p></div>
+      <p>Project page for CoRL 2026 · Built from the Academic Project Page Template.</p>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  <button class="scroll-top" type="button" aria-label="Scroll to top">↑</button>
+  <script src="static/js/index.js"></script>
+</body>
+</html>
